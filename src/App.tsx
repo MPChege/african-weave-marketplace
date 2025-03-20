@@ -14,7 +14,7 @@ import SignIn from "./pages/SignIn";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Account from "./pages/Account";
-import Gift from "./pages/Gift";
+import GiftPage from "./pages/Gift";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +34,7 @@ const App = () => (
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/account" element={<Account />} />
-          <Route path="/gift" element={<Gift />} />
+          <Route path="/gift" element={<GiftPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

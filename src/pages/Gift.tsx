@@ -34,7 +34,8 @@ const GiftCard = ({
   </div>
 );
 
-const Gift = () => {
+// Renamed from 'Gift' to 'GiftPage' to avoid naming conflict with the imported Gift icon
+const GiftPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -167,4 +168,4 @@ const Gift = () => {
   );
 };
 
-export default Gift;
+export default GiftPage;
