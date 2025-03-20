@@ -38,18 +38,20 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* 3D Background - positioned with lower z-index */}
-      <ThreeDBackground />
+      {/* 3D Background - make sure it has a strong z-index positioning */}
+      <div className="absolute inset-0 z-0">
+        <ThreeDBackground />
+      </div>
       
       {/* Semi-transparent overlay to make text more readable */}
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/30 z-10"></div>
       
       {/* Background Images with Transition */}
       {heroImages.map((image, index) => (
         <div
           key={index}
           className={cn(
-            "absolute inset-0 w-full h-full transition-opacity duration-1000 z-[1]",
+            "absolute inset-0 w-full h-full transition-opacity duration-1000 z-20",
             currentImageIndex === index && !transitioning ? "opacity-50" : "opacity-0"
           )}
         >
@@ -67,7 +69,7 @@ const Hero = () => {
       ))}
 
       {/* Content */}
-      <div className="relative z-10 flex items-center h-full max-w-7xl mx-auto px-6 md:px-12">
+      <div className="relative z-30 flex items-center h-full max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-xl">
           <div className="space-y-6 animate-slide-in-bottom" style={{ animationDelay: '0.3s' }}>
             <span className="inline-block px-3 py-1 bg-chen-gold/90 text-white text-xs font-medium tracking-wider uppercase rounded-full shadow-glow">
@@ -101,7 +103,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse-subtle z-10">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-pulse-subtle z-30">
         <span className="text-white/80 text-sm mb-2">Scroll to explore</span>
         <ArrowRight className="text-white transform rotate-90" size={20} />
       </div>
