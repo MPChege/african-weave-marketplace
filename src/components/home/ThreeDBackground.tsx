@@ -1,12 +1,20 @@
 
-import React, { useRef } from 'react';
+import React, { useRef, Suspense } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Environment } from '@react-three/drei';
 import { Color, Mesh, Group } from 'three';
 
 const Model = () => {
   const meshRef = useRef<Mesh>(null);
-  const texture = useTexture('/placeholder.svg');
+  
+  // Wrap texture loading in try/catch to prevent errors from breaking the entire component
+  let texture;
+  try {
+    texture = useTexture('/placeholder.svg');
+  } catch (error) {
+    console.error("Failed to load texture:", error);
+    // Continue without texture if it fails to load
+  }
 
   // Rotate the mesh slowly
   useFrame((state) => {
@@ -60,25 +68,34 @@ const AfricanPatterns = () => {
   );
 };
 
+// Fallback component to show when 3D content is loading
+const LoadingFallback = () => (
+  <div className="absolute inset-0 flex items-center justify-center bg-chen-sand/30">
+    <div className="text-chen-brown text-lg">Loading 3D scene...</div>
+  </div>
+);
+
 const ThreeDBackground = () => {
   return (
     <div className="absolute inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#D4AF37" />
-        <Model />
-        <AfricanPatterns />
-        <Environment preset="sunset" />
-        <OrbitControls 
-          enableZoom={false} 
-          enablePan={false} 
-          autoRotate 
-          autoRotateSpeed={0.5} 
-          enableDamping 
-          dampingFactor={0.05} 
-        />
-      </Canvas>
+      <Suspense fallback={<LoadingFallback />}>
+        <Canvas camera={{ position: [0, 0, 5], fov: 45 }}>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} intensity={1} />
+          <pointLight position={[-10, -10, -10]} intensity={0.5} color="#D4AF37" />
+          <Model />
+          <AfricanPatterns />
+          <Environment preset="sunset" />
+          <OrbitControls 
+            enableZoom={false} 
+            enablePan={false} 
+            autoRotate 
+            autoRotateSpeed={0.5} 
+            enableDamping 
+            dampingFactor={0.05} 
+          />
+        </Canvas>
+      </Suspense>
     </div>
   );
 };

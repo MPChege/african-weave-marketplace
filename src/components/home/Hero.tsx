@@ -38,7 +38,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* 3D Background */}
+      {/* 3D Background - positioned with lower z-index */}
       <ThreeDBackground />
       
       {/* Semi-transparent overlay to make text more readable */}
