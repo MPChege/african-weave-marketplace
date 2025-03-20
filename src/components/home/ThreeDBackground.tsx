@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useTexture, Environment } from '@react-three/drei';
-import { Color, Mesh } from 'three';
+import { Color, Mesh, Group } from 'three';
 
 const Model = () => {
   const meshRef = useRef<Mesh>(null);
@@ -31,7 +31,8 @@ const Model = () => {
 
 // Add additional decorative objects
 const AfricanPatterns = () => {
-  const group = useRef<Mesh>(null);
+  // Fix: Change the ref type from Mesh to Group
+  const group = useRef<Group>(null);
   
   useFrame((state) => {
     if (group.current) {
