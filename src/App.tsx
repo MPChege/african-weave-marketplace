@@ -16,6 +16,7 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Account from "./pages/Account";
 import GiftPage from "./pages/Gift";
+import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/account" element={<Account />} />
             <Route path="/gift" element={<GiftPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
