@@ -10,8 +10,8 @@ const AboutSection = () => {
           {/* Image */}
           <div className="rounded-xl overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1591561954555-607968c989ab?q=80&w=1000&auto=format&fit=crop" 
-              alt="Artisan weaving a traditional pattern"
+              src="https://images.unsplash.com/photo-1530973865279-39d51d988e1d?q=80&w=1000&auto=format&fit=crop" 
+              alt="African artisan creating traditional crafts"
               className="w-full h-full object-cover"
             />
           </div>

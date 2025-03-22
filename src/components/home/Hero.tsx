@@ -8,12 +8,12 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0">
         <div 
-          className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"
           aria-hidden="true"
         />
         <img
-          src="https://images.unsplash.com/photo-1585036166256-61abc80e2ef4?q=80&w=1920&auto=format&fit=crop"
-          alt="Traditional African bag with vibrant patterns"
+          src="https://images.unsplash.com/photo-1591561954555-607968c989ab?q=80&w=1920&auto=format&fit=crop"
+          alt="Traditional African artisan crafts"
           className="w-full h-full object-cover object-center"
         />
       </div>

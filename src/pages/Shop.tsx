@@ -112,13 +112,13 @@ const Shop = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* Hero section */}
+        {/* Hero section with improved background image */}
         <div className="relative h-[40vh] overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-chen-brown/80 to-chen-brown/50" />
           <img 
-            src="https://images.unsplash.com/photo-1631125915902-d8abe9225ff2?q=80&w=1920&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1603915141233-edd34904dd59?q=80&w=1920&auto=format&fit=crop" 
             alt="African artisan marketplace" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 flex items-center justify-center text-center px-4">
             <div className="max-w-3xl">
