@@ -57,7 +57,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="text-2xl font-serif font-bold tracking-tight">
-          Chen Charts
+          Chen Charis
         </Link>
         
         {/* Desktop Navigation */}

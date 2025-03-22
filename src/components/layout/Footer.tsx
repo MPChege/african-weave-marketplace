@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Company info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-serif font-medium mb-6">Chen Charts</h3>
+            <h3 className="text-2xl font-serif font-medium mb-6">Chen Charis</h3>
             <p className="text-sm text-white/80 leading-relaxed max-w-xs">
               Connecting the world to authentic African craftsmanship through sustainable and ethical marketplace solutions.
             </p>
@@ -71,7 +71,7 @@ const Footer = () => {
 
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-white/60 mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Chen Charts. All rights reserved.
+            &copy; {new Date().getFullYear()} Chen Charis. All rights reserved.
           </p>
           <div className="flex space-x-6">
             <Link to="/privacy" className="text-sm text-white/60 hover:text-white transition-colors">
